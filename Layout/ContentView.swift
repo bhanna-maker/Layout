@@ -7,13 +7,23 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    @State private var message = "I know code!"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
+            Image(systemName: "swift")
+                .resizable()
+                .scaledToFit()
                 .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+                .foregroundStyle(.orange)
+            Text(message)
+                .font(Font.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundStyle(.red)
+            Button("Click Me!") {
+                message = "Awsome!"            }
+            .buttonStyle(.glass)
         }
         .padding()
     }
