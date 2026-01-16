@@ -12,19 +12,36 @@ struct ContentView: View {
     @State private var message = "I know code!"
     var body: some View {
         VStack {
-            Image(systemName: "swift")
+            Spacer()
+            Image(systemName:"bird.fill")
                 .resizable()
                 .scaledToFit()
                 .imageScale(.large)
                 .foregroundStyle(.orange)
+                .frame(width:400, height:400)
             Text(message)
                 .font(Font.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundStyle(.red)
-            Button("Click Me!") {
-                message = "Awsome!"            }
-            .buttonStyle(.glass)
-        }
+            Spacer()
+            HStack {
+                Button("Awsome!") {
+                    message = "Awsome!"            }
+                .buttonStyle(.borderedProminent)
+                .font(.title2)
+                .tint(.red)
+                .foregroundStyle(.black)
+        
+                Button("Great!") {
+                    message = "Great!"
+                }
+                .buttonStyle(.borderedProminent)
+                .foregroundStyle(.red)
+                .font(.title3)
+                .tint(.black)
+            }
+            }
+            
         .padding()
     }
 }
